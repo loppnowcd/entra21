@@ -1,0 +1,17 @@
+C:\Users\guest01\source\testeApp\FarmaciaExercicio\obj\Debug\net8.0\FarmaciaExercicio.csproj.AssemblyReference.cache
+C:\Users\guest01\source\testeApp\FarmaciaExercicio\obj\Debug\net8.0\FarmaciaExercicio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\guest01\source\testeApp\FarmaciaExercicio\obj\Debug\net8.0\FarmaciaExercicio.AssemblyInfoInputs.cache
+C:\Users\guest01\source\testeApp\FarmaciaExercicio\obj\Debug\net8.0\FarmaciaExercicio.AssemblyInfo.cs
+C:\Users\guest01\source\testeApp\FarmaciaExercicio\obj\Debug\net8.0\FarmaciaExercicio.csproj.CoreCompileInputs.cache
+C:\Users\guest01\source\testeApp\FarmaciaExercicio\bin\Debug\net8.0\FarmaciaExercicio.exe
+C:\Users\guest01\source\testeApp\FarmaciaExercicio\bin\Debug\net8.0\FarmaciaExercicio.deps.json
+C:\Users\guest01\source\testeApp\FarmaciaExercicio\bin\Debug\net8.0\FarmaciaExercicio.runtimeconfig.json
+C:\Users\guest01\source\testeApp\FarmaciaExercicio\bin\Debug\net8.0\FarmaciaExercicio.dll
+C:\Users\guest01\source\testeApp\FarmaciaExercicio\bin\Debug\net8.0\FarmaciaExercicio.pdb
+C:\Users\guest01\source\testeApp\FarmaciaExercicio\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\guest01\source\testeApp\FarmaciaExercicio\obj\Debug\net8.0\Farmacia.968F70B8.Up2Date
+C:\Users\guest01\source\testeApp\FarmaciaExercicio\obj\Debug\net8.0\FarmaciaExercicio.dll
+C:\Users\guest01\source\testeApp\FarmaciaExercicio\obj\Debug\net8.0\refint\FarmaciaExercicio.dll
+C:\Users\guest01\source\testeApp\FarmaciaExercicio\obj\Debug\net8.0\FarmaciaExercicio.pdb
+C:\Users\guest01\source\testeApp\FarmaciaExercicio\obj\Debug\net8.0\FarmaciaExercicio.genruntimeconfig.cache
+C:\Users\guest01\source\testeApp\FarmaciaExercicio\obj\Debug\net8.0\ref\FarmaciaExercicio.dll
