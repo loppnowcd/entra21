@@ -198,23 +198,33 @@ namespace FarmaciaExercicio
         {
             Console.WriteLine("\nDigite o ID do remédio a atualizar: ");
             string id = Console.ReadLine();
-
-
             var existing = _medicinesService.SearchByID(id);
+
+            if (existing == null) 
+            {
+                Console.WriteLine("Remédio não encontrado!");
+                return;
+            }
+
             var updated = new Medicine()
             {
-                ProductID = existing.ProductID // mantém o mesmo ID conferindo
+                ProductID = existing.ProductID,
+                Name = existing.Name,          
+                Laboratory = existing.Laboratory,
+                Expiration = existing.Expiration, 
+                Weight = existing.Weight,       
+                Price = existing.Price,         
+                Category = existing.Category    
             };
 
             Console.WriteLine($"NOME do remédio: {existing.Name}");
             Console.WriteLine($"Laboratório: {existing.Laboratory}");
 
-            Console.WriteLine($"Novo PESO ({existing.Weight}): ");
+            Console.WriteLine($"Novo PESO ({existing.Weight}g): ");
             updated.Weight = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine($"Novo PREÇO ({existing.Price}): ");
+            Console.WriteLine($"Novo PREÇO (R${existing.Price}): ");
             updated.Price = Convert.ToDouble(Console.ReadLine());
-
 
             _medicinesService.UpdateMedicine(updated);
             Console.WriteLine("Remédio atualizado com sucesso!");
@@ -223,7 +233,7 @@ namespace FarmaciaExercicio
         static void MenuSearchByName()
         {
             Console.Write("\nDigite parte do nome: ");
-            string namePart = Console.ReadLine();
+            string namePart = Console.ReadLine().Trim();
 
             var medicines = _medicinesService.ListMedicines()
                 .Where(m => m.Name.Contains(namePart, StringComparison.OrdinalIgnoreCase))
@@ -244,24 +254,43 @@ namespace FarmaciaExercicio
 
         public static void MenuMedsExit()
         {
-            Console.WriteLine("informe a quantidade");
-            int quantidade = int.Parse(Console.ReadLine());
-            Console.WriteLine("Informe o produto");
-            string idProduto = Console.ReadLine();
+            double priceTotal = 0;
+            double weightTotal = 0;
+            bool addNew = true;
 
-            Cupom cupom = _medicinesService.SellMedicine(idProduto, quantidade);
+            while (addNew)
+            {
+                Console.WriteLine("\nInforme o ID do produto:");
+                string id = Console.ReadLine()!.Trim();
 
-            Console.WriteLine("o valor é " + cupom.TotalPrice);
-            Console.WriteLine($"o peso é {cupom.TotalWeight}");
-        }
+                var product = _medicinesService.SearchByID(id);
+                if (product == null)
+                {
+                    Console.WriteLine("Produto não encontrado! Tente novamente.");
+                    continue;
+                }
 
-        public int TentarConverter(string valor)
-        {
-            bool deucerto = int.TryParse(valor, out int resultado);
-            if (deucerto) return resultado;
+                Console.WriteLine($"{product.Name} ({product.Laboratory}) - Preço: R${product.Price}");
 
-            throw new Exception("");
+                Console.WriteLine("Informe a quantidade:");
+                int quantity = int.Parse(Console.ReadLine());
 
+                double priceUnfinished = product.Price * quantity;
+                double weightUnfinished = product.Weight * quantity;
+
+                priceTotal += priceUnfinished;
+                weightTotal += weightUnfinished;
+
+                Console.WriteLine($"\nAdicionado: {product.Name} x{quantity} = R${priceUnfinished} ({weightUnfinished}g)");
+
+                Console.WriteLine("\nDeseja incluir outro produto na venda? (S/N)");
+                addNew = Console.ReadLine()!.Trim().ToUpper() == "S";
+            }
+
+            Console.WriteLine("\n========= RESUMO DA VENDA =========");
+            Console.WriteLine($"VALOR TOTAL: R${priceTotal}");
+            Console.WriteLine($"PESO TOTAL: {weightTotal}g");
+            Console.WriteLine("===================================");
         }
     }
 }
