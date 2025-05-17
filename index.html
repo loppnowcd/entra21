@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html, body {
+                height: 100%
+            }
+
+            body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .minha-div {
+                display: flex;
+            }
+
+            .minha-div2 {
+                display: flex;
+                flex-direction: column;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+
+        </header>
+        <div class="minha-div">
+            <div>
+                <label for="numValor1">Digite um número</label>
+                <input type="text" id="primeiro-numero" placeholder="Primeiro número" required>
+            </div>
+        </div>
+        <br>
+        <div class="minha-div">
+            <div>
+                <label for="numValor2">Digite um número</label>
+                <input type="text" id="segundo-numero" placeholder="Segundo número" required>
+            </div>
+        </div>
+        
+        <br>
+        <div class="minha-div2">
+            <select id="tipoCalculo" name="tipoCalculo">
+                <option value="somar">Somar</option>
+                <option value="subtrair">Subtrair</option>
+                <option value="multiplicar">Multiplicar</option>
+                <option value="dividir">Dividir</option>
+            </select>
+            <br>
+            Resultado:
+            <input type="text" id="resultado" readonly>
+        </div>
+        <br>
+        <div class="minha-div">
+            <button onclick="calcularSoma()">Calcular</button>
+        </div>
+  </div>
+        
+    
+        <footer>
+        </footer>
+
+
+        <script>
+
+        
+
+      
+
+
+           
+            
+
+
+
+        
+        </script>
+        
+    </body>
+</html>
