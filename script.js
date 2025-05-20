@@ -36,3 +36,17 @@ class Calculadora {
             document.getElementById('resultado').value = resultado;
             }
 
+
+            //Supondo que fosse fazer uma função sem classe
+            //function chamarCalculo() {
+            //let valor1 = document.getElementById('numValor1').value
+            //let valor2 = document.getElementById("numValor2").value
+            //let operacao = document.getElementById('selectOperacao').value
+
+            //let resultadoOperacao = eval(parseInt(valor1) + operacao + parseInt(valor2))
+
+            //let resultado = document.getElementById('numResultado')
+
+            //resultado.value = resultadoOperacao
+            //}
+
