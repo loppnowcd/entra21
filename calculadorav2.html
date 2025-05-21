@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html, body {
+                height: 100%
+            }
+
+            body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .minha-div {
+                display: flex;
+            }
+
+            header {
+                height: 20%;
+                align-items: top;
+            }
+
+            footer {
+                height: 10%;
+                font-style: italic;
+                align-self: bottom;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+        </header>
+        <div style="width: 300px; margin-bottom: 10px;">
+            <input type="text" id="resultado" style="width: 100%; height: 40px; font-size: 18px; box-sizing: border-box;" readonly>
+        </div>
+        <div style="display: flex; flex-direction: row; width: 300px; gap: 10px;">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; width: 180px;">
+            <button onclick="inserir('1')">1</button>
+            <button onclick="inserir('2')">2</button>
+            <button onclick="inserir('3')">3</button>
+            <button onclick="inserir('4')">4</button>
+            <button onclick="inserir('5')">5</button>
+            <button onclick="inserir('6')">6</button>
+            <button onclick="inserir('7')">7</button>
+            <button onclick="inserir('8')">8</button>
+            <button onclick="inserir('9')">9</button>
+            <button onclick="inserir('0')" style="grid-column: span 3;">0</button>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 5px; width: 50px;">
+                <button onclick="inserir('+')">+</button>
+                <button onclick="inserir('-')">-</button>
+                <button onclick="inserir('*')">x</button>
+                <button onclick="inserir('/')">:</button>
+            </div>
+            <div style="display: flex; flex-direction: column; width: 50px;">
+                <button onclick="calcular()"style="height: 100%;">=</button>
+            </div>
+        </div>
+        <footer>
+        </footer>
+        
+    </body>
+    <script>
+            function inserir(valor) {
+            document.getElementById("resultado").value += valor;
+            }
+            
+            function calcular() {
+            let expressao = document.getElementById("resultado").value;
+
+            document.getElementById("resultado").value = eval(expressao);
+            }
+            
+
+    </script>
+</html>
