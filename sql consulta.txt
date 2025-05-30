@@ -1,0 +1,32 @@
+DECLARE @id INT
+DECLARE @Nome NVARCHAR(100)
+
+--SET @ID = 150
+--SET @NOME = 'Jorge'
+--PRINT 'MEU NOME É ' + @NOME + 'E MINHA SENHA É ' + CAST(@ID AS NVARCHAR)
+
+DECLARE cursor_alunos CURSOR FOR
+SELECT Id, Nome FROM Alunos
+OPEN cursor_alunos
+FETCH NEXT FROM cursor_alunos INTO @Id, @Nome
+WHILE @@FETCH_STATUS = 0
+BEGIN
+  PRINT 'ID: ' + CAST(@Id AS NVARCHAR) + ', Nome: ' +@Nome
+
+  DECLARE @SOMA BIGINT
+  SET @SOMA = (SELECT SUM(NOTA) FROM NOTAS WHERE aluno_id = @Id
+
+  IF (@SOMA > 10)
+  BEIGN
+    PRINT 'O ALUNO É MUITO BOM'
+  END
+  ELSE
+  BEGIN
+  PRINT 'O ALUNO NAO É TÃO BOM ASSIM'
+  END
+
+FETCH NEXT FROM cursor_alunos INTO @Id, @Nome
+END
+
+CLOSE cursor_alunos
+DEALLOCATE cursor_alunos
